@@ -1,0 +1,453 @@
+linux-manta (3.4.0-7.32) wily; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * audit: printk USER_AVC messages when audit isn't enabled
+    - LP: #1473584
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 13 Jul 2015 14:49:51 -0700
+
+linux-manta (3.4.0-7.31) wily; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * net: ipv4: current group_info should be put after using.
+    - LP: #1312994
+    - CVE-2014-2851
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 28 Jan 2015 20:58:00 +0000
+
+linux-manta (3.4.0-7.30) vivid; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] CONFIG_FHANDLE=y
+    - LP: #1412543
+
+  [ Tim Gardner ]
+
+  * [Debian] getabis: Commit new ABI directory, remove the old
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 20 Jan 2015 12:07:58 +0000
+
+linux-manta (3.4.0-6.29) utopic; urgency=low
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up) apparmor: Sync to apparmor3 - RC1 snapshot
+    - LP: #1362199
+
+  [ Tim Gardner ]
+
+  * Revert "SAUCE: (no-up) apparmor: Sync to apparmor 3 - alpha 6 snapshot"
+
+  [ Tyler Hicks ]
+
+  * Revert "SAUCE: (no-up) apparmor: fix disconnected bind mnts
+    reconnection"
+  * Revert "SAUCE: (no-up) apparmor fix: remove unused cxt var for
+    unix_sendmsg"
+  * Revert "SAUCE: (no-up) apparmor: use custom write_is_locked macro"
+  * Revert "SAUCE: (no-up) apparmor: fix bug that constantly spam the
+    console"
+  * Revert "SAUCE: (no-up) apparmor: fix apparmor refcount bug in
+    apparmor_kill"
+  * Revert "SAUCE: (no-up) apparmor: fix refcount bug in apparmor
+    pivotroot"
+  * Revert "SAUCE: (no-up) apparmor: fix apparmor spams log with warning
+    message"
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 19 Sep 2014 10:35:55 -0600
+
+linux-manta (3.4.0-6.28) utopic; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * auditsc: audit_krule mask accesses need bounds checking
+    - LP: #1325941
+    - CVE-2014-3917
+  * ptrace, x86: force IRET path after a ptrace_stop()
+    - LP: #1337339
+    - CVE-2014-4699
+  * net/l2tp: don't fall back on UDP [get|set]sockopt
+    - LP: #1341472
+    - CVE-2014-4943
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 03 Sep 2014 12:43:49 -0700
+
+linux-manta (3.4.0-6.27) utopic; urgency=low
+
+  [ Javier Martinez Canillas ]
+
+  * SAUCE: (no-up) apparmor: fix bug that constantly spam the console
+    - LP: #1323526
+
+  [ John Johansen ]
+
+  * Revert "SAUCE: apparmor: removing extra code block that was probably
+    added by a conflict"
+  * Revert "SAUCE: apparmor: removing define as it's currently defined"
+  * Revert "SAUCE: apparmor: fix bad lock balance when introspecting
+    policy"
+  * Revert "SAUCE: apparmor: fix memleak of replacedby struct"
+  * Revert "SAUCE: apparmor: fix memleak of the profile hash"
+  * Revert "SAUCE: apparmor: allocate path lookup buffers during init"
+  * Revert "SAUCE: apparmor: fix unix domain sockets to be mediated on
+    connection"
+  * Revert "SAUCE: (no-up) apparmor: Sync to apparmor 3 - alpha 4 snapshot"
+  * SAUCE: (no-up) apparmor: Sync to apparmor 3 - alpha 6 snapshot
+  * SAUCE: (no-up) apparmor: update configs for apparmor 3 alpha 6
+  * SAUCE: (no-up) apparmor: fix apparmor spams log with warning message
+    - LP: #1308761
+  * SAUCE: (no-up) apparmor: fix refcount bug in apparmor pivotroot
+    - LP: #1308765
+  * SAUCE: (no-up) apparmor: fix apparmor refcount bug in apparmor_kill
+    - LP: #1308764
+  * SAUCE: (no-up) apparmor: use custom write_is_locked macro
+    - LP: #1323530
+  * SAUCE: (no-up) apparmor fix: remove unused cxt var for unix_sendmsg
+  * SAUCE: (no-up) apparmor: fix disconnected bind mnts reconnection
+    - LP: #1319984
+
+  [ Tyler Hicks ]
+
+  * [Config] CONFIG_ECRYPT_FS=y
+  * [Config] Sync LSM config options
+  * [Config] Sync crypto config options
+  * [Config] Sync IPsec config options
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "perf: Treat attr.config as u64 in perf_swevent_init()"
+  * Revert "ARM: 7809/1: perf: fix event validation for software group
+    leaders"
+    - CVE-2013-4254
+  * net: fix incorrect credentials passing
+    - CVE-2013-1979
+  * perf: Treat attr.config as u64 in perf_swevent_init()
+    - CVE-2013-2094
+  * iscsi-target: fix heap buffer overflow on error
+    - CVE-2013-2850
+  * ARM: 7809/1: perf: fix event validation for software group leaders
+    - CVE-2013-4254
+  * n_tty: Fix n_tty_write crash when echoing in raw mode
+    - CVE-2014-0196
+  * floppy: ignore kernel-only members in FDRAWCMD ioctl input
+    - CVE-2014-1737
+  * floppy: don't write kernel-only members to FDRAWCMD ioctl output
+    - CVE-2014-1738
+  * futex: fix handling of read-only-mapped hugepages
+    - CVE-2014-3153
+  * futex: Add another early deadlock detection check
+    - CVE-2014-3153
+  * futex: Prevent attaching to kernel threads
+    - CVE-2014-3153
+  * futex-prevent-requeue-pi-on-same-futex.patch futex: Forbid uaddr ==
+    uaddr2 in futex_requeue(..., requeue_pi=1)
+    - CVE-2014-3153
+  * futex: Validate atomic acquisition in futex_lock_pi_atomic()
+    - CVE-2014-3153
+  * futex: Always cleanup owner tid in unlock_pi
+    - CVE-2014-3153
+  * futex: Make lookup_pi_state more robust
+    - CVE-2014-3153
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 26 Jun 2014 12:59:21 -0600
+
+linux-manta (3.4.0-6.26) utopic; urgency=low
+
+  [ Tyler Hicks ]
+
+  * [Config] Enable ext2 and ext4 security-related options
+
+  [ Upstream Kernel Changes ]
+
+  * exec/ptrace: fix get_dumpable() incorrect tests
+    - LP: #1266546
+    - CVE-2013-2929
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 30 May 2014 11:15:39 +0200
+
+linux-manta (3.4.0-6.25) trusty; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_EXT3_FS_POSIX_ACL=y, CONFIG_EXT3_FS_SECURITY=y
+    - LP: #1295948
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 23 Mar 2014 09:35:15 -0600
+
+linux-manta (3.4.0-6.24) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] CONFIG_RT_GROUP_SCHED=n
+    - LP: #1284731
+  * [Config] enforcer file cannot be zero length
+
+ -- Andy Whitcroft <apw@canonical.com>  Wed, 26 Feb 2014 10:58:59 +0000
+
+linux-manta (3.4.0-5.22) trusty; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+
+  * SAUCE: manta-battery: syncing prop status and capacity across batteries
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 17 Feb 2014 15:58:24 +0000
+
+linux-manta (3.4.0-5.21) trusty; urgency=low
+
+  [ Kees Cook ]
+
+  * SAUCE: (no-up) Yama: add link restrictions
+
+  [ Tyler Hicks ]
+
+  * [Config] Enable Stacked Yama
+
+  [ Upstream Kernel Changes ]
+
+  * Yama: add additional ptrace scopes
+  * Yama: higher restrictions should block PTRACE_TRACEME
+  * security: allow Yama to be unconditionally stacked
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 06 Feb 2014 06:53:32 -0700
+
+linux-manta (3.4.0-5.20) trusty; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] switch build-depends to libiberty-dev
+
+  [ Ricardo Salveti de Araujo ]
+
+  * [Config] Sync config with AOSP 4.4.2
+  * SAUCE: apparmor: removing define as it's currently defined
+  * SAUCE: apparmor: removing extra code block that was probably added by a
+    conflict
+  * SAUCE: gud: don't include build_tag.h, not needed (ftbfs)
+
+  [ Upstream Kernel Changes ]
+
+  * ARM: 7668/1: fix memset-related crashes caused by recent GCC (4.7.2)
+    optimizations
+  * ARM: 7670/1: fix the memset fix
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 21 Jan 2014 19:26:08 -0200
+
+linux-manta (3.4.0-4.19) saucy; urgency=low
+
+  [ John Johansen ]
+
+  * SAUCE: apparmor: fix unix domain sockets to be mediated on connection
+    - LP: #1208988
+  * SAUCE: apparmor: allocate path lookup buffers during init
+    - LP: #1208988
+  * SAUCE: apparmor: fix memleak of the profile hash
+    - LP: #1235523
+  * SAUCE: apparmor: fix memleak of replacedby struct
+    - LP: #1235973
+  * SAUCE: apparmor: fix bad lock balance when introspecting policy
+    - LP: #1235977
+
+  [ Scott James Remnant ]
+
+  * SAUCE: (no-up) trace: add trace events for open(), exec() and uselib()
+    - LP: #1194127
+
+ -- Andy Whitcroft <apw@canonical.com>  Mon, 07 Oct 2013 18:23:03 +0100
+
+linux-manta (3.4.0-4.18) saucy; urgency=low
+
+  [ John Johansen ]
+
+  * Revert "SAUCE: (no-up) apparmor: fix apparmor module status for none
+    root users"
+  * SAUCE: (no-up) apparmor: Sync to apparmor 3 - alpha 4 snapshot
+
+  [ Tim Gardner ]
+
+  * SAUCE: ALSA: pcm: Add snd_printd_ratelimit()
+    - LP: #1213136
+  * SAUCE: ALSA: pcm: Use snd_printd_ratelimit()
+    - LP: #1213136
+
+  [ Upstream Kernel Changes ]
+
+  * Revert "UBUNTU SAUCE: apparmor: 3.4 backport of apparmor3"
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 16 Aug 2013 09:21:34 -0600
+
+linux-manta (3.4.0-4.17) saucy; urgency=low
+
+  [ Upstream Kernel Changes ]
+
+  * binder: search for receiving context pid in global namespace
+    - LP: #1210149
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 08 Aug 2013 09:41:16 -0600
+
+linux-manta (3.4.0-4.16) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * SAUCE: allow mem= banks to be reset on the command line
+    - LP: #1206835
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Mon, 05 Aug 2013 09:52:09 -0600
+
+linux-manta (3.4.0-4.15) saucy; urgency=low
+
+  [ Colin Ian King ]
+
+  * [Config] enable deadline I/O scheduler by default
+    Testing shows that the deadline scheduler on the flash file system
+    performs slightly better than CFQ.  It also consumes marginally less
+    power.  So enable deadline by default.
+
+  [ John Johansen ]
+
+  * SAUCE: (no-up) apparmor: fix apparmor module status for none root users
+    - LP: #1199912
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Thu, 11 Jul 2013 07:48:50 -0600
+
+linux-manta (3.4.0-4.14) saucy; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Config] Harmonize NF, NETFILTER, IP_NF, and IP6_NF options
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Tue, 09 Jul 2013 13:12:47 -0600
+
+linux-manta (3.4.0-4.13) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] CONFIG_CORE_DUMP_DEFAULT_ELF_HEADERS=y
+    - LP: #1108082
+
+  [ Tim Gardner ]
+
+  * [Config] Enable more NF options
+    - LP: #1199351
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 04 Jul 2013 17:24:41 +0100
+
+linux-manta (3.4.0-4.12) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * Revert "[Config] CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=0"
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 02 Jul 2013 16:11:25 +0100
+
+linux-manta (3.4.0-4.11) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=0
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 27 Jun 2013 11:41:07 +0100
+
+linux-manta (3.4.0-4.10) saucy; urgency=low
+
+  [ Tim Gardner ]
+
+  * Fix insertchanges for manta
+  * [debian] Use dh_strip
+    - LP: #1192759
+  * do_tools=false when cross compiling
+
+  [ Upstream Kernel Changes ]
+
+  * UBUNTU SAUCE: apparmor: 3.4 backport of apparmor3
+
+ -- Andy Whitcroft <apw@canonical.com>  Tue, 25 Jun 2013 15:07:35 +0100
+
+linux-manta (3.4.0-4.9) saucy; urgency=low
+
+  * UBUNTU: [Config] Enable and modularize all netfilter matches
+    -LP: #1191197
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Tue, 18 Jun 2013 07:14:22 -0600
+
+linux-manta (3.4.0-3.8) saucy; urgency=low
+
+  * UBUNTU: do_tools_perf=true
+    Put common-tools in the binary-arch-deps path
+    Move all in-dep build depends to Build-depends
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Thu, 13 Jun 2013 07:38:06 -0600
+
+linux-manta (3.4.0-3.7) saucy; urgency=low
+
+  * UBUNTU: [Config] Enable support for /proc/net/wireless
+  * UBUNTU: [Config] Enable the Samsung related camera configs to get the camera to work
+
+ -- Andy Whitcroft <apw@canonical.com>  Thu, 23 May 2013 11:40:08 +0100
+
+linux-manta (3.4.0-2.6) saucy; urgency=low
+
+  [ Ricardo Salveti de Araujo ]
+
+  * [Config] switch us to use gcc-4.6
+    - LP: #1175784
+  * [Config] Enable USB Gadget for Android (needed by adb)
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Fri, 17 May 2013 06:50:47 -0600
+
+linux-manta (3.4.0-1.5) saucy; urgency=low
+
+  [ Tim Gardner ]
+
+  * Fix FTBS harder
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sun, 12 May 2013 00:05:00 -0400
+
+linux-manta (3.4.0-1.4) saucy; urgency=low
+
+  [ Tim Gardner ]
+
+  * Fix packaging FTBS for dbgsym
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Sat, 11 May 2013 10:34:11 -0400
+
+linux-manta (3.4.0-1.3) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Packaging] fix cross compilation with a fixed compiler version
+
+  [ Tim Gardner ]
+
+  * Disable udeb generation
+  * Sync debian rules with master-next which fixes previous linux-headers
+    package build bug.
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 10 May 2013 12:20:11 +0100
+
+linux-manta (3.4.0-1.2) saucy; urgency=low
+
+  [ Andy Whitcroft ]
+
+  * [Config] fix printchanges
+  * [Config] switch us to use gcc-4.7
+    gcc-4.8 has been shown to be problematic with linux-mako. Since
+    this is the same major kernel version I assume manta will have
+    similar issues.
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Wed, 08 May 2013 17:43:26 -0400
+
+linux-manta (3.4.0-0.1) saucy; urgency=low
+
+  * First upload
+  * Added lttng
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Fri, 03 May 2013 13:00:30 -0400
+
+linux-manta (3.4.0-0.0) saucy; urgency=low
+
+  * changelog placeholder
+
+ -- Andy Whitcroft <apw@canonical.com>  Fri, 03 May 2013 17:00:50 +0100
